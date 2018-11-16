@@ -29,6 +29,6 @@ app.use('/post', post);
 import project from './routes/project';
 app.use('/project', project);
 
-app.listen(5555, () => {
-	console.log('server running 5555!');
+app.listen(5100, () => {
+	console.log('server running 5100!');
 });

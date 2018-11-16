@@ -21,7 +21,7 @@ route.post('/signin', async (req,res)=>{
     }
 });
 
-route.post('/signup',(req,res)=>{
+route.post('/signup', async (req,res)=>{
     try {
         const {user_id, user_pw, name, phone} = req.body;
         const user = new User({
@@ -30,7 +30,7 @@ route.post('/signup',(req,res)=>{
             name,
             phone
         });
-        user.save();
+        await user.save();
         res.status(200).json({success: true, data: user});
     } catch (err) {
         res.status(400).json({success: false, message: err.message});        
